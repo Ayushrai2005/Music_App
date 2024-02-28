@@ -56,6 +56,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.ayush.musicapp.AccountDialog
 import com.ayush.musicapp.MainViewModel
 import com.ayush.musicapp.R
 import com.ayush.musicapp.Screen
@@ -77,6 +78,10 @@ fun MainView(){
     val controller : NavController = rememberNavController()
     val  newBackStackEntry  by controller.currentBackStackEntryAsState()
     val currentRoute = newBackStackEntry?.destination?.route
+
+    val dialogOpen = remember{
+        mutableStateOf(false)
+    }
 
     val currentScreen = remember {
         viewModel.currentScreen.value
@@ -110,7 +115,7 @@ fun MainView(){
                                 scaffoldState.drawerState.close()
                             }
                             if(item.dRoute == "add_account"){
-                                //Open dialog
+                                dialogOpen.value = true
                             }else{
                                 controller.navigate(item.dRoute)
                                 title.value = item.dTitle
@@ -124,6 +129,8 @@ fun MainView(){
 
     ) {
             Navigation(navController = controller, viewModel = viewModel, pd = it)
+            
+            AccountDialog(dialogOpen =  dialogOpen)
     }
 }
 
