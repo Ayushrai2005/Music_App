@@ -57,6 +57,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.ayush.musicapp.AccountDialog
+import com.ayush.musicapp.AccountView
 import com.ayush.musicapp.MainViewModel
 import com.ayush.musicapp.R
 import com.ayush.musicapp.Screen
@@ -94,7 +95,7 @@ fun MainView(){
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Home")},
+            TopAppBar(title = { Text(title.value)},
                 navigationIcon = { IconButton(onClick = {
                     //Open a Drawer
                     scope.launch {
@@ -164,12 +165,12 @@ fun DrawerItem(
 fun Navigation(navController: NavController , viewModel: MainViewModel , pd : PaddingValues){
     
     NavHost(navController = navController as NavHostController,
-        startDestination = Screen.DrawerScreen.AddAccount.route,
+        startDestination = Screen.DrawerScreen.Account.route,
         modifier = Modifier.padding(pd) ){
-        // Only two composable beacuse for
 
-        composable(Screen.DrawerScreen.AddAccount.route){
 
+        composable(Screen.DrawerScreen.Account.route){
+                AccountView()
         }
         composable(Screen.DrawerScreen.subscription.route){
 

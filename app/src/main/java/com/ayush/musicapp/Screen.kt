@@ -4,6 +4,8 @@ import androidx.annotation.DrawableRes
 
 sealed class Screen(val title : String , val route : String){
 
+    // All Screen title are mentioned here
+
     sealed class DrawerScreen(val dTitle : String , val dRoute : String , @DrawableRes val icon : Int)
         : Screen(dTitle ,dRoute){
 
@@ -13,7 +15,7 @@ sealed class Screen(val title : String , val route : String){
                 R.drawable.ic_account
             )
         object subscription : DrawerScreen(
-            "Sunscription",
+            "Subscription",
             "subscription",
             R.drawable.ic_subscribe
         )
