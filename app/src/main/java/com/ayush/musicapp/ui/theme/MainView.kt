@@ -62,6 +62,7 @@ import com.ayush.musicapp.MainViewModel
 import com.ayush.musicapp.R
 import com.ayush.musicapp.Screen
 import com.ayush.musicapp.Screen.DrawerScreen.Account.title
+import com.ayush.musicapp.SubscriptionView
 import com.ayush.musicapp.screensInDrawer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -173,6 +174,7 @@ fun Navigation(navController: NavController , viewModel: MainViewModel , pd : Pa
                 AccountView()
         }
         composable(Screen.DrawerScreen.subscription.route){
+            SubscriptionView()
 
         }
 
