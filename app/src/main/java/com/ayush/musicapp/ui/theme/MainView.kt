@@ -43,6 +43,7 @@ import com.ayush.musicapp.AccountDialog
 import com.ayush.musicapp.AccountView
 import com.ayush.musicapp.Browse
 import com.ayush.musicapp.Home
+import com.ayush.musicapp.Library
 import com.ayush.musicapp.MainViewModel
 import com.ayush.musicapp.Screen
 import com.ayush.musicapp.SubscriptionView
@@ -186,7 +187,7 @@ fun Navigation(navController: NavController , viewModel: MainViewModel , pd : Pa
             Browse()
         }
         composable(Screen.BottomScreen.Library.bRoute){
-            //TODO ADD Library Screen
+            Library()
         }
 
         composable(Screen.DrawerScreen.Account.route){
