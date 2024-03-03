@@ -41,6 +41,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.ayush.musicapp.AccountDialog
 import com.ayush.musicapp.AccountView
+import com.ayush.musicapp.Browse
 import com.ayush.musicapp.Home
 import com.ayush.musicapp.MainViewModel
 import com.ayush.musicapp.Screen
@@ -182,7 +183,7 @@ fun Navigation(navController: NavController , viewModel: MainViewModel , pd : Pa
             Home()
         }
         composable(Screen.BottomScreen.Browse.bRoute){
-            //TODO ADD Browse Screen
+            Browse()
         }
         composable(Screen.BottomScreen.Library.bRoute){
             //TODO ADD Library Screen
