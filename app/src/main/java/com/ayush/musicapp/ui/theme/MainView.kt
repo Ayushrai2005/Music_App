@@ -91,7 +91,6 @@ fun MainView(){
                         onClick = { controller.navigate(item.bRoute)
                             title.value = item.bTitle
                         }, icon = {
-
                             Icon(tint= tint,
                                 contentDescription = item.bTitle, painter= painterResource(id = item.icon))
                         },
