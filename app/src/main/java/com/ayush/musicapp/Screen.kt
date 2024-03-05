@@ -7,11 +7,20 @@ sealed class Screen(val title : String , val route : String){
     sealed class BottomScreen(
         val bTitle : String , val bRoute: String , @DrawableRes val icon : Int
     ): Screen(bTitle , bRoute){
-        object Home : BottomScreen("Home" , "home" , R.drawable.baseline_music_video_24)
+        object Home : BottomScreen(
+            "Home" ,
+            "home" ,
+            R.drawable.baseline_music_video_24)
 
-        object Library : BottomScreen("Library" , "library" , R.drawable.baseline_library_music_24)
+        object Library : BottomScreen(
+            "Library" ,
+            "library" ,
+            R.drawable.baseline_library_music_24)
 
-        object Browse : BottomScreen("Browse" , "browse" , R.drawable.baseline_apps_24)
+        object Browse : BottomScreen(
+            "Browse" ,
+            "browse" ,
+            R.drawable.baseline_apps_24)
 
     }
 
