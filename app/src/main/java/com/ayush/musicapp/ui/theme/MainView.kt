@@ -57,6 +57,7 @@ import com.ayush.musicapp.AccountView
 import com.ayush.musicapp.Browse
 import com.ayush.musicapp.Home
 import com.ayush.musicapp.Library
+import com.ayush.musicapp.LoginSignup.LoginPage
 import com.ayush.musicapp.MainViewModel
 import com.ayush.musicapp.R
 import com.ayush.musicapp.Screen
@@ -265,8 +266,11 @@ fun MoreBottomSheet(modifier : Modifier){
 fun Navigation(navController: NavController , viewModel: MainViewModel , pd : PaddingValues){
     
     NavHost(navController = navController as NavHostController,
-        startDestination = Screen.BottomScreen.Home.bRoute,
+        startDestination = "login_page",
         modifier = Modifier.padding(pd) ){
+
+        composable("login_page", content = { LoginPage(navController = navController) })
+
 
         composable(Screen.BottomScreen.Home.bRoute){
             Log.d("NavigationAY", "Navigated to Home screen")
